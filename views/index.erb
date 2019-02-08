@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+<style type="text/css">
+	h1 { font-size: 2.00rem; }
+
+@media (min-width: 320px) {
+  h1 { font-size: /* 『魔法の値』 from 1.25rem to 2.5rem */; }
+}
+
+@media (min-width: 960px) {
+  h1 { font-size: 2.5rem; }
+}
+</style>
+<title>answer_form</title>
+
+</head>
+<body>
+	<div class="row">
+	<div class="col-lg-8 col-lg-offset-2">
+	<div class="panel panel-default">
+	<div class="panel-heading">
+
+	<h1><b>今どんな音楽がお勧めですか？</b></h1>
+	<br>
+	<p>どんな音楽を良く聴いているのかアンケートを行っております！<br>是非あなたのお勧めを教えてください！</p>
+	</div>
+
+	<div class="panel-body">
+	<form action="/answers" method="post">
+
+	<div class="form-group">
+	<label for="name">ニックネーム</label><br>
+	<input type="text" name="name" id="name"  placeholder="必須" required>
+	</div>
+	<div class="form-group">
+	<label for="music">曲名</label><br>
+	<input type="text" name="music" id="music" placeholder="必須" required>
+	</div>
+	<div class="form-group">
+	<label for="artist">アーティスト</label><br>
+	<input type="text" name="artist" id="artist" placeholder="">
+	</div>
+	<div class="form-group">
+	<label for="url">参考</label><br>
+	<input type="text" name="url" id="url" placeholder="YouTubeのURLなど">
+	</div>
+
+	<input type="submit" class="btn btn-primary pull-left" value="回答を送信"></input>
+	<input type="reset" class="btn btn-warning pull-left" value="入力リセット"></input>
+
+	</form>
+	</div>
+	</div>
+	</div>
+	</div>
+<!--<div class="link"  align="right">-->
+<!--<a href="/answers">一覧</a>-->
+<!--</div>-->
+</body>
+</html>
