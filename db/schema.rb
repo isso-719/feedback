@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2018_07_27_022931) do
   create_table "answers", force: :cascade do |t|
     t.string "name"
     t.string "mail"
+    t.string "product"
     t.string "topic"
     t.string "feedback_type"
     t.string "comment"

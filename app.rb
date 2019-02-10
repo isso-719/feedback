@@ -16,8 +16,13 @@ post '/answers' do
     Answer.create(
         name: params[:name],
         mail: params[:mail],
-        problems: params[:artist],
-        url: params[:url]
+        product: params[:product],
+        topic: params[:topic],
+        feedback_type: params[:feedback_type],
+        comment: params[:comment],
+        os: params[:os],
+        device: params[:device],
+        purpose: params[:purpose]
     )
 redirect '/thanks'
 end

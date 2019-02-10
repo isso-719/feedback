@@ -18,6 +18,9 @@
 </style>
 <title>answer_form</title>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/assets/css/index.css">
+
 </head>
 <body>
 	<div class="row">
@@ -25,41 +28,84 @@
 	<div class="panel panel-default">
 	<div class="panel-heading">
 
-	<h1><b>今どんな音楽がお勧めですか？</b></h1>
+	<h1><b>フィードバックフォーム</b></h1>
 	<br>
-	<p>どんな音楽を良く聴いているのかアンケートを行っております！<br>是非あなたのお勧めを教えてください！</p>
+	<h6>以下のフォームにコメントをご記入のうえお送りください。みなさまからのフィードバックはすべて拝見いたします。なお、お寄せいただいたご意見、ご感想に対する個別の返答はできかねますので、あらかじめご了承ください。Eメールアドレスをご記入いただいた場合、お送りいただいた内容をより良く理解するため、こちらから連絡をさせていただくことがあります。合わせてご了承ください。</h6>
 	</div>
 
 	<div class="panel-body">
 	<form action="/answers" method="post">
 
 	<div class="form-group">
-	<label for="name">ニックネーム</label><br>
-	<input type="text" name="name" id="name"  placeholder="必須" required>
+	<label for="name">お名前(必須)</label><br>
+	<input type="text" name="name" id="name"  placeholder="" required>
 	</div>
 	<div class="form-group">
-	<label for="music">曲名</label><br>
-	<input type="text" name="music" id="music" placeholder="必須" required>
+	<label for="music">E-メールアドレス</label><br>
+	<input type="text" name="topic" id="topic" placeholder="">
 	</div>
 	<div class="form-group">
-	<label for="artist">アーティスト</label><br>
-	<input type="text" name="artist" id="artist" placeholder="">
+	<label for="artist">件名(必須)</label><br>
+	<input type="text" name="topic" id="topic" placeholder="" required>
 	</div>
 	<div class="form-group">
-	<label for="url">参考</label><br>
-	<input type="text" name="url" id="url" placeholder="YouTubeのURLなど">
+	<label for="product">フィードバックするサービス(必須)</label><br>
+	<select required name="product" id="product">
+		<option label="選択してください" selected></option>
+		<option>Pomod.co</option>
+		<option>このフィードバックページ</option>
+	</select>
+	</div>
+	<div class="form-group">
+	<label for="feedback_type">フィードバックの種類(必須)</label><br>
+	<select required name="feedback_type" id="feedback_type">
+		<option label="選択してください" selected></option>
+		<option>機能に関するリクエスト</option>
+		<option>デザインに関するリクエスト</option>
+		<option>バグレポート</option>
+		<option>パフォーマンス</option>
+		<option>ソフトウェア/ハードウェアの互換性</option>
+		<option>その他</option>
+	</select>
+	</div>
+	<div class="form-group">
+	<label for="comment">コメント(必須)</label><br>
+	<textarea required name="comment" cols="40" rows="7"></textarea>
+	</div>
+	<div class="form-group">
+	<label for="OS">OS</label><br>
+	<input type="text" name="OS" id="OS" placeholder="(例)iOS12">
+	</div>
+	<div class="form-group">
+	<label for="device">デバイス</label><br>
+	<input type="text" name="device" id="device" placeholder="(例)iPhone XS">
+	</div>
+	<div class="form-group">
+	<label for="purpose">使用目的</label><br>
+	<textarea name="purpose" cols="40" rows="7"></textarea>
 	</div>
 
-	<input type="submit" class="btn btn-primary pull-left" value="回答を送信"></input>
-	<input type="reset" class="btn btn-warning pull-left" value="入力リセット"></input>
+	<input type="submit" class="btn btn-primary pull-left" value="回答を送信">
 
 	</form>
 	</div>
 	</div>
 	</div>
 	</div>
-<!--<div class="link"  align="right">-->
-<!--<a href="/answers">一覧</a>-->
-<!--</div>-->
+
+<%# <script>
+$(function(){
+    $('#bigword').bind('change',function(){
+      var bigwordindex = $(this).prop('selectedIndex') - 1;
+      console.log(bigwordindex );
+      if(bigwordindex<0){
+        $('#smword select').removeClass('on');
+      }else{
+        $('#smword select:not(:eq(bigwordindex)) option').attr('selected', false);
+        $('#smword select:not(:eq(bigwordindex))').removeClass('on');
+        $('#smword select').eq(bigwordindex).addClass('on');
+      }
+    });
+});</script> %>
 </body>
 </html>

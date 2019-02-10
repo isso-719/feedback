@@ -3,6 +3,7 @@ class CreateAnswers < ActiveRecord::Migration[5.2]
     create_table :answers do |t|
       t.string :name
       t.string :mail
+      t.string :product
       t.string :topic
       t.string :feedback_type
       t.string :comment
