@@ -27,7 +27,7 @@ post '/answers' do
 redirect '/thanks'
 end
 
-get '/answers' do
+get '/admin/answers/kazukiisogai' do
     @answers = Answer.all
     erb :answers
 end
